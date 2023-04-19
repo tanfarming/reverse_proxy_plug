@@ -97,6 +97,8 @@ defmodule ReverseProxyPlug do
 
   def request(conn, body, opts) do
     {method, url, headers, client_options} = prepare_request(conn, opts)
+    IO.puts({method, url, headers, client_options})
+ 
 
     opts[:client].request(%HTTPClient.Request{
       method: method,
