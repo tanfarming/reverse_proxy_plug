@@ -275,6 +275,8 @@ defmodule ReverseProxyPlug do
       |> normalize_headers
       |> add_x_fwd_for_header(conn)
 
+    IO.puts("preserve_host_header: ")
+    IO.inspect(:preserve_host_header)
     headers =
       if options[:preserve_host_header],
         do: headers,
